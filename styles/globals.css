@@ -4,14 +4,26 @@
 
 @layer components {
   .button-primary {
-    @apply rounded-lg text-subhead-regular-sm border border-secondary bg-secondary px-[1.875rem] py-[0.688rem] text-black hover:border-primary hover:bg-primary hover:text-white active:border-primary active:bg-primary  disabled:bg-secondary transition-all delay-100;
+    @apply rounded-lg text-subhead-regular-sm px-[1.875rem] py-[0.688rem]  border border-secondary bg-secondary text-dark hover:border-primary hover:bg-primary hover:text-white active:border-primary active:bg-primary  disabled:bg-secondary transition-all delay-100;
   }
   .button-secondary {
-    @apply rounded-lg text-subhead-regular-sm border border-primary bg-primary px-[1.875rem] py-[0.688rem] text-white hover:border-primary-variant-2 hover:bg-primary-variant-2 active:border-primary active:bg-primary  disabled:bg-secondary transition-all delay-100;
+    @apply rounded-lg text-subhead-regular-sm border px-[1.875rem] py-[0.688rem] border-primary bg-primary  text-white hover:border-primary-variant-2 hover:bg-primary-variant-2 active:border-primary active:bg-primary  disabled:bg-secondary transition-all delay-100;
   }
-  .button-gradient-primary {
-    @apply rounded-lg border;
+
+  .button-gradient {
+    @apply relative rounded-lg text-subhead-regular-sm text-white px-[1.875rem] py-[0.688rem] bg-gradient-to-r from-primary to-primary-variant-2 z-10 overflow-hidden;
   }
+
+  .button-gradient::after {
+    content: "";
+    @apply absolute inset-0 bg-gradient-to-l opacity-0 transition-opacity duration-500;
+    z-index: -1;
+  }
+
+  .button-gradient:hover::after {
+    @apply opacity-100;
+  }
+
   .button-gradient-secondary {
     @apply rounded-lg border;
   }

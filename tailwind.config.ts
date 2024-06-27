@@ -356,6 +356,7 @@ const config: Config = {
         ],
       },
       colors: {
+        dark: "#252D3D",
         primary: "#2A64E6",
         "primary-variant-1": "#4566AE",
         "primary-variant-2": "#45C2DA",
@@ -367,7 +368,7 @@ const config: Config = {
         warning: "#ff9900",
       },
       backgroundImage: {
-        // bg-purple-variant-1 ... and so on
+        // bg-blue-variant-1 ... and so on
         "blue-variant-1":
           "linear-gradient(99.93deg, #2A64E6 3.58%, #45C2DA 95.71%",
         "blue-variant-2":

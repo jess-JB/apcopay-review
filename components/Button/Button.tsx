@@ -21,7 +21,7 @@ import classNames from "classnames";
 
 type ButtonProps = {
   children: React.ReactNode;
-  buttonType: "primary" | "secondary" | "gradientPrimary" | "gradientSecondary";
+  buttonType: "primary" | "secondary" | "gradient";
 } & DetailedHTMLProps<
   ButtonHTMLAttributes<HTMLButtonElement>,
   HTMLButtonElement
@@ -34,8 +34,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
   const buttonVariants = {
     primary: "button-primary",
     secondary: "button-secondary",
-    gradientPrimary: "button-gradient-primary",
-    gradientSecondary: "button-gradient-secondary",
+    gradient: "button-gradient",
   };
 
   return (
