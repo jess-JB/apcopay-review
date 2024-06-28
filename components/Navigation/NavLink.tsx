@@ -1,7 +1,5 @@
 import React, { AnchorHTMLAttributes, DetailedHTMLProps } from "react";
 import SmartLink from "../SmartLink";
-import ImageFallback from "../ImageFallback";
-import Image from "next/image";
 
 type Props = {
   title: string;
@@ -14,14 +12,14 @@ type Props = {
   "className"
 >;
 
-const Link = ({ title, className, href }: Props) => {
+const NavLink = ({ title, className, href }: Props) => {
   return (
     <SmartLink href={href}>
-      <div className='text-subhead-regular-sm capitalize rounded-full hover:bg-primary-variant-3 py-[0.5rem] px-[0.938rem]'>
+      <div className='text-subhead-regular-sm capitalize rounded-full hover:bg-primary-variant-3 py-[0.5rem] px-[0.938rem] transition-all delay-100'>
         {title}
       </div>
     </SmartLink>
   );
 };
 
-export default Link;
+export default NavLink;

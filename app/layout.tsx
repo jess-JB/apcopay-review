@@ -1,5 +1,6 @@
 import { Poppins } from "next/font/google";
 import "@/styles/globals.css";
+import Header from "./@header/page";
 
 const poppins = Poppins({
   subsets: ["latin", "latin-ext"],
@@ -14,8 +15,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
+    <html lang='en' suppressHydrationWarning>
       <body className={`${poppins.className} h-screen w-screen`}>
+        <Header />
         {children}
       </body>
     </html>

@@ -40,9 +40,9 @@ const config: Config = {
       },
       fontSize: {
         "hero-1": [
-          "2.875rem",
+          "3.75rem",
           {
-            lineHeight: "3.438rem",
+            lineHeight: "4.063rem",
             fontWeight: "700",
           },
         ],
@@ -61,9 +61,9 @@ const config: Config = {
           },
         ],
         "hero-2": [
-          "2.125rem",
+          "2.813rem",
           {
-            lineHeight: "2.563rem",
+            lineHeight: "3.125rem",
             fontWeight: "700",
           },
         ],

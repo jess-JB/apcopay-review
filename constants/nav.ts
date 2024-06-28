@@ -16,3 +16,18 @@ export const nav = [
     href: "/",
   },
 ];
+
+export const lang = [
+  {
+    title: "en",
+    description: "english",
+  },
+  {
+    title: "gr",
+    description: "german",
+  },
+  {
+    title: "it",
+    description: "italian",
+  },
+];
