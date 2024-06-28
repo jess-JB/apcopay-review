@@ -19,11 +19,9 @@
     @apply absolute inset-0 bg-gradient-to-l opacity-0 transition-opacity duration-500;
     z-index: -1;
   }
-
   .button-gradient:hover::after {
     @apply opacity-100;
   }
-
   .button-gradient-secondary {
     @apply rounded-lg border;
   }
