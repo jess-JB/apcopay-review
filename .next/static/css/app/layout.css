@@ -707,36 +707,11 @@ video {
 .gap-5 {
   gap: 1.25rem;
 }
-.rounded-lg {
-  border-radius: 0.5rem;
-}
-.rounded-xl {
-  border-radius: 0.75rem;
-}
-.rounded-2xl {
-  border-radius: 1rem;
-}
 .rounded-full {
   border-radius: 9999px;
 }
 .p-11 {
   padding: 2.75rem;
-}
-.px-\[0\.5rem\] {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-.py-\[\] {
-  padding-top: ;
-  padding-bottom: ;
-}
-.py-\[0\.938\] {
-  padding-top: 0.938;
-  padding-bottom: 0.938;
-}
-.py-\[0\.938rem\] {
-  padding-top: 0.938rem;
-  padding-bottom: 0.938rem;
 }
 .px-\[0\.938rem\] {
   padding-left: 0.938rem;
@@ -753,11 +728,6 @@ video {
 }
 .capitalize {
   text-transform: capitalize;
-}
-
-.hover\:bg-primary-variant-2:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(69 194 218 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-primary-variant-3:hover {
