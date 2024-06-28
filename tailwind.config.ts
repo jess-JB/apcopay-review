@@ -361,6 +361,7 @@ const config: Config = {
         "primary-variant-1": "#4566AE",
         "primary-variant-2": "#45C2DA",
         "primary-variant-3": "#DAEDF1",
+        "primary-variant-4": "#f6fafb",
         secondary: "#E6AE2A",
         tertiary: "#3C3524",
         positive: "#1f8256",
