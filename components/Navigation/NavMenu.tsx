@@ -29,14 +29,12 @@ const NavMenu = () => {
           <Button buttonType={"gradient"}>Start Now</Button>
           <CustomLink
             href={"/"}
-            hoverColor={"hover:fill-primary"}
             icon={true}
             iconUrl={"/assets/icon/nav-support-icon.svg"}
             iconProps={{ height: 20, alt: "Support Icon", width: 20 }}
           />
           <CustomLink
             href={"/"}
-            hoverColor={"hover:fill-primary"}
             icon={true}
             iconUrl={"/assets/icon/nav-search-icon.svg"}
             iconProps={{ height: 20, alt: "Support Icon", width: 20 }}

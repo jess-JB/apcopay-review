@@ -11,19 +11,31 @@ const Page = () => {
       <CustomLink
         href={"/"}
         icon={true}
+        iconHovered
+        iconBg
         iconUrl={"/assets/icon/gaming-icon.svg"}
         iconProps={{ width: 30, height: 30, alt: "ALT" }}
-        hoverColor={"hover:primary"}
+        hoverColor={"hover:text-primary"}
         title={"iGaming"}
-        description={"Gaming Purposes"}
       />
       <CustomLink
         href={"/"}
         icon={true}
+        iconHovered
+        iconBg
         iconUrl={"/assets/icon/menu-payment-icon.svg"}
-        iconProps={{ width: 30, height: 30, alt: "ALT" }}
-        hoverColor={"hover:primary"}
+        iconProps={{ width: 25, height: 25, alt: "ALT" }}
+        hoverColor={"hover:text-primary"}
         title={"Payments"}
+        description={"Online Payments"}
+      />
+      <CustomLink
+        href={"/"}
+        icon={true}
+        iconUrl={"/assets/icon/right-arrow.svg"}
+        iconProps={{ width: 10, height: 10, alt: "ALT" }}
+        hoverColor={"hover:text-primary"}
+        title={"Europe"}
       />
     </div>
   );

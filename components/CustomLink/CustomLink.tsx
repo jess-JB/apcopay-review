@@ -5,7 +5,9 @@ import Typography from "../Typography";
 
 type Props = {
   href: string;
-  hoverColor: string;
+  hoverColor?: string;
+  iconHovered?: boolean;
+  iconBg?: boolean;
   textSize?: string;
   children?: React.ReactNode;
   icon?: boolean;
@@ -23,6 +25,8 @@ const CustomLink = ({
   href,
   icon = false,
   hoverColor,
+  iconHovered,
+  iconBg,
   textSize,
   children,
   iconUrl = null,
@@ -34,7 +38,12 @@ const CustomLink = ({
     <SmartLink href={href} className={`${textSize} ${hoverColor}`}>
       {icon && (
         <div className='flex gap-3 justify-center items-center group'>
-          <div className='bg-primary-variant-4 p-3 rounded-lg group-hover:bg-primary-variant-3 transition-all delay-100'>
+          <div
+            className={`${iconBg && "bg-primary-variant-4"} p-3 rounded-lg ${
+              iconHovered &&
+              "group-hover:bg-primary-variant-3 transition-all delay-100"
+            }`}
+          >
             <ImageWithFallback
               src={iconUrl}
               height={iconProps?.height}
@@ -45,7 +54,7 @@ const CustomLink = ({
           <div className='flex flex-col gap-1'>
             <Typography.Headline
               level={3}
-              className='group-hover:text-primary transition-all delay-100'
+              className={`group-hover:text-primar1y transition-all delay-100`}
             >
               {title}
             </Typography.Headline>
