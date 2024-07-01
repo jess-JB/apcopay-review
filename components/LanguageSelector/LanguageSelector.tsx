@@ -13,9 +13,9 @@ const LanguageSelector = () => {
         height={20}
       />
       <SmartLink href={"/"}>
-        <Typography.Subhead className='text-gray-500 uppercase'>
+        <Typography.Body level={2} className='text-gray-500 uppercase'>
           {lang[0].title}
-        </Typography.Subhead>
+        </Typography.Body>
       </SmartLink>
     </div>
   );

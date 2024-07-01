@@ -7,26 +7,29 @@ import LanguageSelector from "../LanguageSelector";
 import Divider from "../Divider";
 import Typography from "../Typography";
 import CustomLink from "../CustomLink";
+import MobileNav from "./MobileNav";
 
 const NavMenu = () => {
   return (
-    <div className='bg-white/95'>
-      <div className='max-w-[1440px] m-auto flex items-center justify-center gap-[3.75rem] py-[1.875rem]'>
+    <div className='w-full h-full bg-white/95'>
+      <div className='mobile:max-w-screen-mobile tablet:max-w-screen-tablet desktop:max-w-[1440px] max-desktop:hidden m-auto px-5 flex items-center justify-between gap-5 py-[1.875rem]  overflow-hidden'>
         <ImageWithFallback
           src={"/assets/nav-logo.svg"}
           width={212.78}
-          height={45}
+          height={35}
         />
-        <div className='flex gap-6'>
+        <div className='flex gap-3'>
           {nav.map((item) => (
             <NavLink key={item.title} title={item.title} href={item.href} />
           ))}
         </div>
-        <div className='flex gap-5 '>
+        <div className='flex gap-3 '>
           <LanguageSelector />
           <Divider />
-          <div className='flex gap-5 justify-center items-center'>
-            <Typography.Body className='text-gray-500'>Login</Typography.Body>
+          <div className='flex gap-3 justify-center items-center'>
+            <Typography.Body level={2} className='text-gray-500'>
+              Login
+            </Typography.Body>
             <Button variant={"gradient"}>Start Now</Button>
             <CustomLink
               variant={"onlyIcon"}
@@ -51,6 +54,7 @@ const NavMenu = () => {
           </div>
         </div>
       </div>
+      <MobileNav />
     </div>
   );
 };

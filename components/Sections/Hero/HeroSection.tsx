@@ -6,16 +6,9 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <div className=' w-full h-full px-11 bg-gradient-to-r from-dark to-primary text-white'>
-      {/* <Image
-        src={"/assets/hero-background.svg"}
-        alt='Hero Background'
-        width={1440}
-        height={2000}
-        className='absolute z-[-1] top-[-105px] left-0'
-      /> */}
-      <div className='flex max-w-[1440px] m-auto gap-20 py-20 px-32 justify-center items-center'>
-        <div className='flex flex-col gap-8'>
+    <div className=' w-full h-full  bg-gradient-to-r from-dark to-primary text-white'>
+      <div className='mobile:max-w-screen-mobile tablet:max-w-screen-tablet desktop:max-w-screen-desktop desktop:flex m-auto gap-15 py-20 justify-center items-center'>
+        <div className='flex flex-col gap-8 max-desktop:mb-20 max-desktop:text-center max-desktop:items-center'>
           <HeroTypography level={1}>
             Put The
             <span className='text-primary-variant-2'>
@@ -27,16 +20,20 @@ const Hero = () => {
           <Typography.Headline level={2}>
             In one fully integrated payment platform.
           </Typography.Headline>
-          <Button variant={"primary"} className='max-w-[150px] font-bold'>
+          <Button
+            variant={"primary"}
+            className='desktop:max-w-[150px] w-full  font-bold'
+          >
             Let's Go
           </Button>
         </div>
+
         <Image
           src={"/assets/main-banner.svg"}
           alt='Hero Background'
           width={606}
           height={408}
-          className='h-full w-full'
+          className='m-auto'
         />
       </div>
     </div>
