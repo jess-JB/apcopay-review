@@ -10,7 +10,7 @@ import CustomLink from "../CustomLink";
 
 const NavMenu = () => {
   return (
-    <div className='flex gap-[3.75rem]  items-center justify-center py-[1.875rem] px-[6.25rem]'>
+    <div className='flex gap-[3.75rem] bg-white items-center justify-center py-[1.875rem] px-[6.25rem]'>
       <ImageWithFallback
         src={"/assets/nav-logo.svg"}
         width={212.78}
@@ -26,8 +26,8 @@ const NavMenu = () => {
         <Divider />
         <div className='flex gap-5 justify-center items-center'>
           <Typography.Body className='text-gray-500'>Login</Typography.Body>
-          <Button buttonType={"gradient"}>Start Now</Button>
-          <CustomLink
+          <Button variant={"gradient"}>Start Now</Button>
+          {/* <CustomLink
             href={"/"}
             icon={true}
             iconUrl={"/assets/icon/nav-support-icon.svg"}
@@ -38,7 +38,7 @@ const NavMenu = () => {
             icon={true}
             iconUrl={"/assets/icon/nav-search-icon.svg"}
             iconProps={{ height: 20, alt: "Support Icon", width: 20 }}
-          />
+          /> */}
         </div>
       </div>
     </div>

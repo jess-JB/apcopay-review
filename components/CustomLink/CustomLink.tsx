@@ -1,70 +1,91 @@
-import React, { Children } from "react";
-import SmartLink from "../SmartLink";
-import ImageWithFallback from "../ImageWithFallback";
-import Typography from "../Typography";
+"use client";
 
-type Props = {
+import React, { AnchorHTMLAttributes } from "react";
+import SmartLink from "../SmartLink/SmartLink";
+import Typography from "../Typography";
+import ImageWithFallback from "../ImageWithFallback";
+
+interface CustomLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
+  // ,VariantProps<typeof linkVariants>
   href: string;
-  hoverColor?: string;
-  iconHovered?: boolean;
-  iconBg?: boolean;
-  textSize?: string;
-  children?: React.ReactNode;
-  icon?: boolean;
-  iconUrl?: string | null;
+  className?: string;
+  variant: "noIcon" | "onlyIcon" | "withIcon";
+  children: React.ReactNode;
   iconProps?: {
+    iconUrl: string | undefined;
+    width?: number;
+    height?: number;
     alt: string;
-    width: number;
-    height: number;
+    noBG?: boolean;
+    position: "top" | "left" | "right";
   };
-  title?: string;
-  description?: string;
-};
+  description?: boolean;
+  textDescription?: React.ReactNode;
+}
 
 const CustomLink = ({
   href,
-  icon = false,
-  hoverColor,
-  iconHovered,
-  iconBg,
-  textSize,
+  className,
+  variant,
   children,
-  iconUrl = null,
   iconProps,
-  title,
   description,
-}: Props) => {
+  textDescription,
+  ...props
+}: CustomLinkProps) => {
+  // ICONS
+  const linkIcon: React.ReactNode = (
+    <div
+      className={`p-3 rounded-lg ${
+        variant === "onlyIcon" || iconProps?.noBG
+          ? "group-hover:fill-primary fill-primary"
+          : "bg-primary-variant-4 group-hover:bg-primary-variant-3 transition-all delay-100"
+      }`}
+    >
+      <ImageWithFallback
+        src={iconProps?.iconUrl || null}
+        width={iconProps?.width || 25}
+        height={iconProps?.height || 25}
+        alt={iconProps?.alt}
+        className='fill-current text-black hover:text-blue-500'
+      />
+    </div>
+  );
+
+  const textClassname = `${className} transition-all delay-100 group-hover:text-primary`;
+
   return (
-    <SmartLink href={href} className={`${textSize} ${hoverColor}`}>
-      {icon && (
-        <div className='flex gap-3 justify-center items-center group'>
-          <div
-            className={`${iconBg && "bg-primary-variant-4"} p-3 rounded-lg ${
-              iconHovered &&
-              "group-hover:bg-primary-variant-3 transition-all delay-100"
-            }`}
-          >
-            <ImageWithFallback
-              src={iconUrl}
-              height={iconProps?.height}
-              width={iconProps?.width}
-              alt={iconProps?.alt}
-            />
-          </div>
-          <div className='flex flex-col gap-1'>
-            <Typography.Headline
-              level={3}
-              className={`group-hover:text-primar1y transition-all delay-100`}
-            >
-              {title}
-            </Typography.Headline>
-            <Typography.Caption className=' text-gray-500'>
-              {description}
-            </Typography.Caption>
+    <SmartLink href={href} {...props} className={`group`}>
+      {/* NO ICON */}
+      {variant === "noIcon" && (
+        <Typography.Footnote className={textClassname}>
+          {children}
+        </Typography.Footnote>
+      )}
+
+      {/* ONLY ICON */}
+      {variant === "onlyIcon" && (
+        <div className='flex justify-center items-center gap-3'>{linkIcon}</div>
+      )}
+
+      {/* WITH ICON */}
+      {variant === "withIcon" && (
+        <div
+          className={`${
+            iconProps?.position === "right" ? "flex-row-reverse" : ""
+          } flex justify-center items-center gap-3`}
+        >
+          {linkIcon}
+          <div className={`${description && "flex flex-col gap-1"}`}>
+            <Typography.Body level={1} strong className={textClassname}>
+              {children}
+            </Typography.Body>
+            {description && (
+              <Typography.Caption>{textDescription}</Typography.Caption>
+            )}
           </div>
         </div>
       )}
-      {children}
     </SmartLink>
   );
 };

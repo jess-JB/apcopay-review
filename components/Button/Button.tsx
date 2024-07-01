@@ -1,53 +1,40 @@
 "use client";
 
-import {
-  type ButtonHTMLAttributes,
-  type DetailedHTMLProps,
-  forwardRef,
-  memo,
-} from "react";
-import classNames from "classnames";
+import { cn } from "@/lib/utils";
+import { cva, VariantProps } from "class-variance-authority";
+import React, { ButtonHTMLAttributes, FC } from "react";
 
-/**
- * Extends the default button html tag to apply style based on the button type
- * @param children
- * @param buttonType 'primary' | 'secondary' | 'secondary' | 'gradient-primary' | 'gradient-secondary'
- * @param mini
- * @param className additional classnames to further customize the button
- * @param as
- * @param props other button props
- * @constructor
- */
-
-type ButtonProps = {
+interface ButtonProps
+  extends ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
   children: React.ReactNode;
-  buttonType: "primary" | "secondary" | "gradient";
-} & DetailedHTMLProps<
-  ButtonHTMLAttributes<HTMLButtonElement>,
-  HTMLButtonElement
->;
+}
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
-  { children, buttonType = "primary", className, ...props },
-  ref
-) {
-  const buttonVariants = {
-    primary: "button-primary",
-    secondary: "button-secondary",
-    gradient: "button-gradient",
-  };
-
+const Button = ({ children, className, variant, ...props }: ButtonProps) => {
   return (
-    <button
-      ref={ref}
-      className={classNames(buttonVariants[buttonType], className)}
-      {...props}
-    >
+    <button {...props} className={cn(buttonVariants({ variant, className }))}>
       {children}
     </button>
   );
-});
+};
 
-Button.displayName = "Button";
+const buttonVariants = cva(
+  "inline-flex justify-center items-center rounded-lg text-subhead-regular-sm px-[1.875rem] py-[0.688rem] hover:cursor-pointer border transition-all delay-100",
+  {
+    variants: {
+      variant: {
+        primary:
+          "border-secondary bg-secondary text-dark hover:border-primary hover:bg-primary hover:text-white active:border-primary active:bg-primary  disabled:bg-secondary",
+        secondary:
+          "border-primary bg-primary  text-white hover:border-primary-variant-2 hover:bg-primary-variant-2 active:border-primary active:bg-primary  disabled:bg-secondary",
+        gradient:
+          "text-white px-[1.875rem] py-[0.688rem] relative bg-gradient-to-r from-primary to-primary-variant-2 z-10 overflow-hidden button-gradient",
+      },
+    },
+    defaultVariants: {
+      variant: "primary",
+    },
+  }
+);
 
-export default memo(Button);
+export default Button;
