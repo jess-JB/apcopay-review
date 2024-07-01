@@ -3,7 +3,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div className=''>
+    <div className='sticky top-0 z-50 '>
       <NavMenu />
     </div>
   );

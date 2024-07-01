@@ -10,7 +10,7 @@ import CustomLink from "../CustomLink";
 
 const NavMenu = () => {
   return (
-    <div className='flex gap-[3.75rem] bg-white items-center justify-center py-[1.875rem] px-[6.25rem]'>
+    <div className=' flex gap-[3.75rem] bg-white/95 items-center justify-center py-[1.875rem] '>
       <ImageWithFallback
         src={"/assets/nav-logo.svg"}
         width={212.78}
@@ -27,18 +27,26 @@ const NavMenu = () => {
         <div className='flex gap-5 justify-center items-center'>
           <Typography.Body className='text-gray-500'>Login</Typography.Body>
           <Button variant={"gradient"}>Start Now</Button>
-          {/* <CustomLink
-            href={"/"}
-            icon={true}
-            iconUrl={"/assets/icon/nav-support-icon.svg"}
-            iconProps={{ height: 20, alt: "Support Icon", width: 20 }}
+          <CustomLink
+            variant={"onlyIcon"}
+            href='/'
+            iconProps={{
+              iconUrl: "/assets/icon/nav-support-icon.svg",
+              alt: "Search Icon",
+              width: 20,
+              height: 20,
+            }}
           />
           <CustomLink
-            href={"/"}
-            icon={true}
-            iconUrl={"/assets/icon/nav-search-icon.svg"}
-            iconProps={{ height: 20, alt: "Support Icon", width: 20 }}
-          /> */}
+            variant={"onlyIcon"}
+            href='/'
+            iconProps={{
+              iconUrl: "/assets/icon/nav-search-icon.svg",
+              alt: "Search Icon",
+              width: 20,
+              height: 20,
+            }}
+          />
         </div>
       </div>
     </div>

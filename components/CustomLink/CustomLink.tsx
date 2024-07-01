@@ -10,14 +10,14 @@ interface CustomLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   href: string;
   className?: string;
   variant: "noIcon" | "onlyIcon" | "withIcon";
-  children: React.ReactNode;
+  children?: React.ReactNode;
   iconProps?: {
     iconUrl: string | undefined;
     width?: number;
     height?: number;
     alt: string;
     noBG?: boolean;
-    position: "top" | "left" | "right";
+    position?: "top" | "left" | "right";
   };
   description?: boolean;
   textDescription?: React.ReactNode;
@@ -55,7 +55,7 @@ const CustomLink = ({
   const textClassname = `${className} transition-all delay-100 group-hover:text-primary`;
 
   return (
-    <SmartLink href={href} {...props} className={`group`}>
+    <SmartLink href={href} {...props} className={`group inline-flex`}>
       {/* NO ICON */}
       {variant === "noIcon" && (
         <Typography.Footnote className={textClassname}>

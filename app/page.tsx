@@ -4,11 +4,15 @@ import Hero from "@/components/Sections/Hero/HeroSection";
 import Typography from "@/components/Typography";
 
 import React from "react";
+import Header from "./header/page";
 
 const Page = () => {
   return (
-    <div className='flex flex-col gap-5 justify-center items-center p-11 '>
-      <Button variant={"primary"}>Our Products</Button>
+    <div
+      className=''
+      // className='flex flex-col gap-5 justify-center items-center p-11 '
+    >
+      {/* <Button variant={"primary"}>Our Products</Button>
       <Button variant={"secondary"}>Learn More</Button>
       <CustomLink
         href={"/"}
@@ -91,8 +95,9 @@ const Page = () => {
       </CustomLink>
       <CustomLink href={"/"} variant={"noIcon"}>
         FOOTER LINK
-      </CustomLink>
-      {/* <Hero /> */}
+      </CustomLink> */}
+      <Hero />
+      <div className='h-[450px] w-full bg-red-500'></div>
     </div>
   );
 };
