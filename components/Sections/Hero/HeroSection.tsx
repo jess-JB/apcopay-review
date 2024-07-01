@@ -6,17 +6,17 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <div className='relative w-full h-[599px] text-white'>
-      <Image
+    <div className=' w-full h-full px-11 bg-gradient-to-r from-dark to-primary text-white'>
+      {/* <Image
         src={"/assets/hero-background.svg"}
         alt='Hero Background'
         width={1440}
         height={2000}
         className='absolute z-[-1] top-[-105px] left-0'
-      />
-      <div className='flex gap-20 px-32 pt-20 justify-center items-center'>
+      /> */}
+      <div className='flex max-w-[1440px] m-auto gap-20 py-20 px-32 justify-center items-center'>
         <div className='flex flex-col gap-8'>
-          <HeroTypography level={2}>
+          <HeroTypography level={1}>
             Put The
             <span className='text-primary-variant-2'>
               {" "}
@@ -24,9 +24,9 @@ const Hero = () => {
             </span>{" "}
             In Your Hands
           </HeroTypography>
-          <Typography.Body level={1} strong>
+          <Typography.Headline level={2}>
             In one fully integrated payment platform.
-          </Typography.Body>
+          </Typography.Headline>
           <Button variant={"primary"} className='max-w-[150px] font-bold'>
             Let's Go
           </Button>
