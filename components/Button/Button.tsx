@@ -19,7 +19,7 @@ const Button = ({ children, className, variant, ...props }: ButtonProps) => {
 };
 
 const buttonVariants = cva(
-  "inline-flex justify-center items-center rounded-lg text-subhead-regular-sm px-[1.875rem] py-[0.688rem] hover:cursor-pointer border transition-all delay-100",
+  "inline-flex justify-center items-center rounded-lg text-subhead-regular-sm px-[1.875rem] py-[0.688rem] hover:cursor-pointer border transition-all delay-100 abcd",
   {
     variants: {
       variant: {
